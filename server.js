@@ -5,7 +5,10 @@ var express = require("express"); // imports Express module as required element 
 var app = express(); // express function is used to create an express application
                      // usign var app you can store the results of the function (which generates the application in a variable for further access)
 
-var server = app.listen(3000); // creates a variable called server where saves the content of var express is recieved on port localhost:3000
+var server = app.listen(process.env.PORT || 3000, function() { // This line allows the app to be executed through Heroku
+  var port = server.address().port;
+  console.log("Express is working on port " + port);
+});
 
 app.use(express.static("public")); // creates a line to define which files are dispalyed on server (using folde "public" as source for publicly hosted material)
                                    // static = hosts static files, files that does not change --> HTML, JavaScript and assets
