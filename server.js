@@ -1,7 +1,5 @@
 // REMINDER --> WHEN YOU WANT TO RUN THIS CODE YOU NEED TO START THE SERVER FROM TERMINAL USING NODE
 
-var port = process.env.PORT || 3000; // This line allows the app to be executed through Heroku
-
 var express = require("express"); // imports Express module as required element in the variable --> used to call function
 
 var app = express(); // express function is used to create an express application
